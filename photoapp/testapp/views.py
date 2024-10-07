@@ -10,12 +10,12 @@ from django.conf import settings
 
 def applyfilter(filename, preset):
 	#gets file
-	inputfile = '/home/mcolbert/cis4517/courseProject/photoapp/testapp/media/documents/' + filename
+	inputfile = '/home/mcolbert/cis4517/courseProject/ImageProcessor/photoapp/testapp/media/documents/' + filename
 
 	f=filename.split('.')
 	outputfilename = f[0] +'-'+ preset + '.jpg'
 	
-	outputfile = '/home/mcolbert/cis4517/courseProject/photoapp/testapp/static/output/' + outputfilename
+	outputfile = '/home/mcolbert/cis4517/courseProject/ImageProcessor/photoapp/testapp/static/output/' + outputfilename
 
 	im = Image.open(inputfile)
 	if preset=='gray':
@@ -48,7 +48,7 @@ def applyfilter(filename, preset):
 
 def handle_uploaded_file(f,preset):
 	#opens file or creates it for writing
-	uploadfilename='/home/mcolbert/cis4517/courseProject/photoapp/testapp/media/documents/'+ f.name #'testapp/media/' + f.name #os.path.join(settings.MEDIA_ROOT, 'documents', f.name)  # Assuming 'documents' is your subdirectory  ##old line: 
+	uploadfilename='/home/mcolbert/cis4517/courseProject/ImageProcessor/photoapp/testapp/media/documents/'+ f.name #'testapp/media/' + f.name #os.path.join(settings.MEDIA_ROOT, 'documents', f.name)  # Assuming 'documents' is your subdirectory  ##old line: 
 	
 	#saves the file to server
 	with open(uploadfilename, 'wb+') as destination:
